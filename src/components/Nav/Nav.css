@@ -1,0 +1,128 @@
+
+.nav {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.171), rgba(0, 0, 0, 0.918), black), url('../../assets/owl-face.jpg') no-repeat;
+  background-size: cover;
+  transition: ease 0.3s;
+  opacity: 1;
+  position: absolute;
+  right: 0;
+  z-index: 10;
+}
+
+.closed {
+  height: 100vh;
+  overflow: hidden;
+  width: 0vw;
+  transition: ease 0.3s;
+}
+
+#hamMenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+  width: 35px;
+  height: 35px;
+  position: fixed;
+  right: 5vw;
+  top: 5vh;
+  cursor: pointer;
+  opacity: 1;
+
+}
+
+.line {
+  position: absolute;
+  height: 4px;
+  width: 90%;
+  background: whitesmoke;
+  transition: all cubic-bezier(0.25, 0.1, 0.28, 1) 0.4s;
+}
+
+.line01 {
+  top: 15%;
+}
+
+.line02 {
+  top: 40%;
+}
+
+.line03 {
+  top: 65%;
+}
+
+.line01closed {
+  transform: rotate(-45deg);
+  top: 49%;
+}
+
+.line02closed,
+.line03closed {
+  transform: rotate(45deg);
+  top: 49%;
+}
+
+.menuItems {
+  list-style: none;
+  color: whitesmoke;
+  text-align: right;
+  font-size: 80px;
+  opacity: 1;
+  transition: ease-out 0.5s;
+  margin-right: 5vw;
+  margin-top: 10vw;
+  line-height: 1.7;
+}
+
+.closedMenu {
+  opacity: 0;
+  /* transition: ease-in 0.3s; */
+}
+
+.menuItems > a, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (max-width: 599px){
+  .nav {
+    background: black;
+  }
+  #hamMenu {
+    right: 10vw;
+  }
+  .menuItems {
+    font-size: 40px;
+    margin-top: 15vh;
+    line-height: 2;
+    margin-right: 10vw;
+  }
+}
+
+@media (min-width: 600px){
+  .nav {
+    background: black;
+  }
+  #hamMenu {
+    right: 8vw;
+  }
+  .menuItems {
+    margin-top: 15vh;
+    font-size: 60px;
+    margin-right: 8vw;
+  }
+}
+
+@media (min-width: 900px){
+  .nav {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.171), rgba(0, 0, 0, 0.918), black), url('../../assets/owl-face.jpg') no-repeat;
+    background-size: cover;
+
+  }
+  .menuItems {
+    margin-top: 15vh;
+    font-size: 80px;
+  }
+}

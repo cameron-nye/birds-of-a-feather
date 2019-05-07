@@ -1,0 +1,59 @@
+
+.home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('../../assets/wing.jpeg');
+  background-size: cover;
+  color: whitesmoke;
+}
+
+.title {
+  line-height: 1.6;
+}
+
+.title h1 {
+  font-size: 2rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  text-align: end;
+  margin-right: 6%;
+}
+
+
+
+/* for tablet portrait up  */
+@media (min-width: 600px) {
+  .title h1 {
+    font-size: 3.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.8rem;
+  }
+}
+
+/* for tablet landscape up  */
+@media (min-width: 900px) {
+  .title h1 {
+    font-size: 5rem;
+  }
+
+  .subtitle {
+    font-size: 2.5rem;
+  }
+}
+
+/* for desktop up  */
+@media (min-width: 1200px) {
+  .title h1 {
+    font-size: 6rem;
+  }
+
+  .subtitle {
+    font-size: 3rem;
+  }
+}

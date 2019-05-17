@@ -117,7 +117,7 @@
 
 @media (min-width: 900px){
   .nav {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.171), rgba(0, 0, 0, 0.918), black), url('../../assets/owl-face.jpg') no-repeat;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.171), rgba(0, 0, 0, 0.947), black), url('../../assets/owl-face.jpg') no-repeat;
     background-size: cover;
 
   }

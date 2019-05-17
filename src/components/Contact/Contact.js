@@ -5,16 +5,26 @@ import {TextField, Paper} from "@material-ui/core";
 //STYLESHEET
 import './Contact.css'
 
-export default function Contact() {
+function Contact() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [location, setLocation] = useState('')
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
-
+  
+  const handleSubmit = () => {
+    axios
+      .post('/email', {name, email, location, subject, message})
+      .then(() => {
+        setName('');
+        setEmail('');
+        setLocation('');
+        setSubject('');
+        setMessage('');
+      })
+  }
 
   return (
-    <Paper>
       <div className="contact">
         <p>Contact Me</p>
         <div className="contactWrapper">
@@ -23,11 +33,11 @@ export default function Contact() {
               style={{ width: 250 }}
               id="name"
               label="What is your name?"
-              value={this.state.name}
-              onChange={e => {
-                this.inputHandler(e, "name");
-              }}
               margin="normal"
+              value={name}
+              onChange={e => {
+                setName(e.target.value)
+              }}
             />
           </div>
           <div className="email">
@@ -35,9 +45,9 @@ export default function Contact() {
               style={{ width: 250 }}
               id="email"
               label="What is your email?"
-              value={this.state.email}
+              value={email}
               onChange={e => {
-                this.inputHandler(e, "email");
+                setEmail(e.target.value)
               }}
               margin="normal"
             />
@@ -47,9 +57,9 @@ export default function Contact() {
               style={{ width: 250 }}
               id="location"
               label="Where are you from?"
-              value={this.state.location}
+              value={location}
               onChange={e => {
-                this.inputHandler(e, "location");
+                setLocation(e.target.value)
               }}
               margin="normal"
             />
@@ -59,9 +69,9 @@ export default function Contact() {
               style={{ width: 250 }}
               id="subject"
               label="Subject"
-              value={this.state.subject}
+              value={subject}
               onChange={e => {
-                this.inputHandler(e, "subject");
+                setSubject(e.target.value)
               }}
               margin="normal"
             />
@@ -73,9 +83,9 @@ export default function Contact() {
               fullWidth
               id="message"
               label="How can I help you?"
-              value={this.state.message}
+              value={message}
               onChange={e => {
-                this.inputHandler(e, "message");
+                setMessage(e.target.value)
               }}
               margin="normal"
             />
@@ -83,13 +93,14 @@ export default function Contact() {
           <div
             className="sendButton"
             onClick={() => {
-              this.handleSubmit();
+              handleSubmit();
             }}
           >
             Submit
           </div>
         </div>
       </div>
-    </Paper>
   )
 }
+
+export default Contact;
